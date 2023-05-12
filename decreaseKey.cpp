@@ -1,3 +1,9 @@
+/*
+Usporeddba binarne i Fibonaccijeve hrpe na slučaju 
+kada je 1123123 decrease key operacija gdje između
+svakih 100 bude jedna extractMin operacija
+*/
+
 #include <bits/stdc++.h>
 #include <windows.h>
  #include<unistd.h>
@@ -708,7 +714,7 @@ int main(){
 				h.decreaseKey( niz[j] , (int) h.getMin()-1 );
 //				h.decreaseKey( (rand()*rand() + rand())%(num_nodes/2)+num_nodes/2-1 , (int) h.getMin()-1 );
 				ka++;
-				if(ka==1000){
+				if(ka==100){
 					int ze=h.extractMin();
 					h.insertKey( ze+10 );
 					ka=0;
@@ -755,12 +761,12 @@ int main(){
 			for(int j=0;j<kol;j++){
 		//		if(j%1000==0)cout<<j<<endl;
 		//		if(bio[to])continue;
-//				hrpa.decreaseKey( (ll)((ll)j*j*343+j)%num_nodes+1 , hrpa.minimum()-1 );//br�e od rng
+//				hrpa.decreaseKey( (ll)((ll)j*j*343+j)%num_nodes+1 , hrpa.minimum()-1 );//bre od rng
 //				hrpa.decreaseKey( (rand()*rand() + rand())%num_nodes+1 , (int) hrpa.minimum()-1 );
 				hrpa.decreaseKey( niz[j] , hrpa.minimum()-1 );
 //				hrpa.decreaseKey( ((ll)j*j+j+13)%num_nodes+1 , hrpa.minimum()-1 );
 				ka++;
-				if(ka==1000){
+				if(ka==100){
 					pair<int,int> par=hrpa.extractMin();
 					hrpa.insert( par.first+5 , par.second );
 					ka=0;
